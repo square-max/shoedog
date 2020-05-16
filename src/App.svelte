@@ -177,10 +177,15 @@ section{
 
 	border-radius: 50%;
 	padding: 0.5rem;
+	margin: auto;
 
 }
 #litenProfil{
 	background-color: orange;
+	display: grid;
+	grid-auto-flow: row;
+	margin: auto;
+	border-radius: 20px;
 	
 	
 	
