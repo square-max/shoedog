@@ -56,15 +56,7 @@ const lagreArtikkel = () => {
 <input bind:value={beskrivelse} placeholder="Description" required>
 <input bind:value={merke} placeholder="Brand" required>
 <input type="file" bind:files placeholder="Image" required>
-<!--<input list="merker"> 
-<!-- <datalist id="merker">
-  <option value="Nike">
-  <option value="Addidas">
-  <option value="Puma">
-  <option value="Yeezys">
-  <option value="Converse">
-  <option value="Supra">
-</datalist> -->
+
 {#if file}
 		<div>selected file{file.name}</div>
 		<button class="knapp">Upload</button> 
