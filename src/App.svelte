@@ -68,9 +68,6 @@ function handleClick() {
 {/if}
 </section>
 
-
-<h1>Feed2</h1>
-
 <Article />
 
 
@@ -89,7 +86,7 @@ nav {
 li{
 	display: inline;
 	float:right;
-	background-color: red;
+	background-color: none;
 	
 }
 

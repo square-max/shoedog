@@ -6,6 +6,8 @@ import { authState } from "rxfire/auth"
  
 
 let user;
+/* let displayName = user.displayName; */
+let photoURL = user.photoURL;
     
 
 const subscribe = authState(auth).subscribe(u => user = u)
@@ -22,7 +24,7 @@ const subscribe = authState(auth).subscribe(u => user = u)
 
 
 
-<!-- 	<img src={user.photoURL} alt="pb"> -->
+	<img src={user.photoURL} alt="pb"> 
 	<button class="logout" on:click={logout}>Logg ut <!-- {user.displayName} --></button>
 	</section>
 
