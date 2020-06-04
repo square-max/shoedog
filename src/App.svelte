@@ -98,35 +98,32 @@ $: x = console.log(y)
 <Feed/>
 
 {#each articles as article}
-<article >
-<div class="container">
-<h2>{article.data().overskrift}</h2>
-
-{#if article.data().url==null}
-<img src="./images/shoedoglogo.png" alt="no photo" /> 
-{:else}
-<img id="box" src={article.data().url} alt="bilde">
- {/if}
-<p>{article.data().beskrivelse}</p>
-<div id="brand">Brand: {article.data().merke}</div>
-<p>Posted by {user.displayName} date:{article.data().opprettet} </p>
-</div>
-</article>
-{:else}
-<div id="loading">Loading</div>
+	<article >
+		<div class="container">
+			<h2>{article.data().overskrift}</h2>
+			{#if article.data().url==null}
+				<img src="./images/shoedoglogo.png" alt="no photo" /> 
+			{:else}
+				<img id="box" src={article.data().url} alt="bilde">
+			{/if}
+			<p>{article.data().beskrivelse}</p>
+			<div id="brand">Brand: {article.data().merke}</div>
+			<p>Posted by {user.displayName} date:{article.data().opprettet} </p>
+		</div>
+	</article>
+	{:else}
+	<div id="loading">Loading</div>
 {/each}
 
 {#if y > 3500}
 <!--Back to top button-->
     <div  id="back-to-top" class="yellow-shadow" title="Go to top">
-	<a href="#liste">back to top</a>
-    
-	 
+		<a href="#liste">back to top</a>
     </div>
   {/if}
 
 
-  <style>
+<style>
 
 
 nav {
@@ -170,6 +167,12 @@ article{
 		padding: 1rem;
 		margin-top: 5rem;
 		
+	}
+	
+	@media only screen and (max-width:1200px){
+		.container{
+			max-width: 90vw;
+		}
 	}
 
 	img{
