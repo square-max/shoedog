@@ -8,7 +8,7 @@
 
 
 <iframe src="https://giphy.com/embed/3q3RARXfS7piRLCUtc" title="Gif" width="371" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    <div class="tekst" marginTop="40" width="371" max-height="480"  frameBorder="0">
+    <div class="tekst" marginTop="40" width="371" height="480"  frameBorder="0">
         <h1>About shoedog </h1>
         <hr/>
         <p>
@@ -23,7 +23,7 @@
         </p>
     </div>
 <div id="reklame">
-    <img src="./images/whitereklame.jpg" alt="appreklame" marginTop="40" width="100%" height="480" frameBorder="0" >
+    <img src="./images/whitereklame.jpg" alt="appreklame" marginTop="40" width="371" height="480" frameBorder="0" >
 </div>
 
 
@@ -35,24 +35,14 @@
 
 <style>
 
-/* section{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-    margin: auto;
-    width: 70vw;
-    height: 480px;
-    margin-bottom: 15rem;
-    margin-top: 5rem;
-   
-} */
 
 section{
     display: grid;
     grid-auto-flow: column;
 
     margin: auto;
-    width: 70vw;
+    width: 70%;
     height: 50vh;
     margin-bottom: 15rem;
     margin-top: 5rem;
@@ -61,7 +51,8 @@ section{
 
 .tekst{
     background-color: orange;
-      margin-left: 3rem;
+    width: 271px;
+      
 }
 
 h1{
@@ -77,9 +68,7 @@ p{
     padding: 1rem;
 }
 
-img{
-    min-width: 100%;
-}
+
 
 
 
