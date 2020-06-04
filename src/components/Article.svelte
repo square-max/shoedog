@@ -1,5 +1,6 @@
 <script>
-import {db} from "../firebase.js"
+
+import {db} from "../firebase.js" 
 
 let user;
 let count = 0;

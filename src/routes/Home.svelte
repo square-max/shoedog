@@ -10,7 +10,7 @@
 
   //	import { auth, googleProvider } from "./firebase.js" //
 	import { authState } from "rxfire/auth"
-	import {db} from "./firebase.js" 
+	
  
 
   export let url = "";

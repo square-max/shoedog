@@ -1,6 +1,7 @@
 import firebase from "firebase/app"
 import "firebase/auth"
 import "firebase/firestore"
+import "firebase/storage"
 
 //masse grier fra firebase
 var firebaseConfig = {
@@ -20,3 +21,4 @@ var firebaseConfig = {
 export const auth = firebase.auth()
 export const googleProvider = new firebase.auth.GoogleAuthProvider()
 export const db = firebase.firestore() 
+export const storage = firebase.storage()

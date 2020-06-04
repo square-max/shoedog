@@ -1,16 +1,18 @@
 <script>
 
-  import { auth, googleProvider } from "../firebase.js"
-import { authState } from "rxfire/auth"
+import { auth, googleProvider } from "./../firebase.js"
+import { authState } from "rxfire/auth" 
 	
  
 
 let user;
-/* let displayName = user.displayName; */
-let photoURL = user.photoURL;
+
+/* 
+let displayName = user.displayName; 
+let photoURL = user.photoURL;  */
     
 
-const subscribe = authState(auth).subscribe(u => user = u)
+const unsubscribe = authState(auth).subscribe(u => user = u)
 
 
 	const logout = () => {
@@ -19,14 +21,17 @@ const subscribe = authState(auth).subscribe(u => user = u)
 </script>
 
 
-
+{#if user}
 <section id="profil">
 
 
 
-	<img src={user.photoURL} alt="pb"> 
-	<button class="logout" on:click={logout}>Logg ut <!-- {user.displayName} --></button>
+	<img src={user.photoURL} alt="pb">  
+	<button class="logout" on:click={logout}>Log Out  {user.displayName}</button>
 	</section>
+	{:else}
+	<div>no user</div>
+	{/if}
 
 
     <style>
@@ -39,7 +44,8 @@ const subscribe = authState(auth).subscribe(u => user = u)
 }
 
 #profil img {
-	width: 100px;
+	width: 50px;
+	height: 50px;
 
 	border-radius: 50%;
 	

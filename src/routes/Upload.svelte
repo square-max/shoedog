@@ -1,10 +1,13 @@
 <script>
 import {onMount} from "svelte"
+import {db} from "./../firebase.js" 
+import {storage} from "./../firebase.js" 
 
 
 
-let db
-let storage
+
+
+
 let overskrift = ""
 let beskrivelse = ""
 let merke = ""
@@ -14,13 +17,13 @@ let files = []
 $: file = files[0]
 
 onMount( async () => {
-        db = firebase.firestore();
-        storage = firebase.storage();
+       /*  db = firebase.firestore();
+        storage = firebase.storage(); */
     }
 )
 
 const lastOpp = async () => {
-    progresjon ="...laster opp din artikkel"
+    progresjon ="...Uploading"
 
     const sti = storage
         .ref()
@@ -30,8 +33,10 @@ const lastOpp = async () => {
     const urlen = await opplasting.ref.getDownloadURL();
     url =urlen;
 
-    progresjon = "Din artikkel er lastet opp"
+    progresjon = "Your content is being uploaded"
     lagreArtikkel();
+    alert("Success! You have uploaded to the community!")
+
 }
 
 const lagreArtikkel = () => {
@@ -59,9 +64,10 @@ const lagreArtikkel = () => {
 
 {#if file}
 		<div>selected file{file.name}</div>
-		<button class="knapp">Upload</button> 
+		<button class="select">Upload</button> 
 		{:else}
-		<div class="select">Choose a file you want to upload</div>
+        <div class="select">↑</div>
+		<div class="select">Select Image </div>
 		{/if}
 
 </form>
@@ -98,9 +104,7 @@ input{
     margin: auto;
 }
 
-.knapp{
-    max-width: 3rem;
-}
+
 
 h1 {
 		font-size: 2.8em;
@@ -109,4 +113,8 @@ h1 {
 		margin: 0 0 0.5em 0;
 		color: black;
 	}
+
+    body{
+        margin-bottom: 15rem;
+    }
 </style>
